@@ -17,7 +17,7 @@ import Button from '@material-ui/core/Button';
   },
 }));*/
 
-class AccountForm extends Component {
+class FamilyProfile extends Component {
   
 
   state = {
@@ -227,6 +227,4 @@ class AccountForm extends Component {
   }
 }
 
-export default AccountForm;
-
-//<img src={logo} className="App-logo" alt="logo" />
+export default FamilyProfile;

@@ -1,4 +1,4 @@
-import React from "react";
+/*import React from "react";
 
 function Jumbotron({ children }) {
   return (
@@ -12,3 +12,4 @@ function Jumbotron({ children }) {
 }
 
 export default Jumbotron;
+*/

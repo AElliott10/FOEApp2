@@ -5,7 +5,7 @@ import { Typography } from "@material-ui/core";
 import Grid from '@material-ui/core/Grid';
 
 
-class Home extends Component {
+class ElfProfile extends Component {
   render() {
     return (
       <div>
@@ -14,8 +14,8 @@ class Home extends Component {
           <Grid container >
             <Grid item lg>
               <Typography align="center">
-                <h1>Welcome to The Festival of Elves!</h1>
-                <body1>We are so excited to share with you a old tradition by elves for many centuries....</body1>
+                <h1>ELF PROFILE PAGE</h1>
+                <body1>XXXXXXXX</body1>
               </Typography>
             </Grid>
           </Grid>
@@ -26,7 +26,4 @@ class Home extends Component {
   }
 }
 
-export default Home;
-
-
-//<img src={logo} className="App-logo" alt="logo" />
+export default ElfProfile;

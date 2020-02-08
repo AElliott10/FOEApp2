@@ -12,6 +12,8 @@ const accountsSchema = new mongoose.Schema({
     // You can read more about RegEx Patterns here https://www.regexbuddy.com/regex.html
     email: {
         type: String,
+        unique: true,
+        required: "Email is Required",
         match: [/.+@.+\..+/, "Please enter a valid e-mail address"]
     },
     // `password` must be of type String
@@ -79,12 +81,13 @@ const accountsSchema = new mongoose.Schema({
     start_festival: { 
         type: Date, 
         required: "Please select a start date"
+        /*validate: [
+            function (input) {
+                return input.dateFormat >= mm/dd/yyy;
+            },
+            "Please use MM/DD/YYYY format."
+        ]*/
     }, //defaults to December 1 or if after account is create user has to select a start date.
-
-
-    end_festival: { 
-        type: Date, 
-    }, //defaults to December 25
 
     learn_about: { type: String }, //assuming which checkbox they select will input into database
     account_active: {type: Boolean, default: true}

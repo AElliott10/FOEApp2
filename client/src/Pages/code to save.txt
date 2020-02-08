@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import { MainHeader } from "../Components/MainBackground";
+import { MainHeader } from "../Components/Header_Footer/MainHeader";
 import { Link } from "react-router-dom";
 import API from "../Utilities/API";
 import { Input, FormBtn } from "../Components/Form";
 import { Row } from "../Components/Grid";
 
-
-class Profile extends Component {
+class AccountForm extends Component {
+ 
   state = {
     email: "",
     password: "",
@@ -27,6 +27,7 @@ class Profile extends Component {
       [name]: value
     });
   };
+  
   handleFormSubmit = event => {
     event.preventDefault();
     //if all the required fields are complete
@@ -45,17 +46,15 @@ class Profile extends Component {
         end_festival: this.state.end_festival,
         learn_about: this.state.learn_about
       })
-        .catch(err => console.log(err));
+      .catch(err => console.log(err.response));
     }
   };
   render() {
     return (
-      <div className="Profile">
-        <MainHeader>
-          <h2>Register for Festival of the Elves</h2>
-        </MainHeader>
+      <div className="AccountForm">
+        <MainHeader/>
         <p>
-          EDIT PROFILE
+          Please complete the form.
         </p>
         <form>
           <Input
@@ -143,7 +142,7 @@ class Profile extends Component {
             //disabled={!(this.state.author && this.state.title)}
             onClick={this.handleFormSubmit}
           >
-            Submit Edits
+            Submit AccountForm
             </FormBtn>
         </form>
         <Row>
@@ -155,6 +154,6 @@ class Profile extends Component {
   }
 }
 
-export default Profile;
+export default AccountForm;
 
 //<img src={logo} className="App-logo" alt="logo" />

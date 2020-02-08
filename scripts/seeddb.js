@@ -8,12 +8,12 @@ mongoose.connect(
   process.env.MONGODB_URI ||
   "mongodb://localhost/Foe_db"
 );
-
+const date = new Date;
 const accountsSeed = [
   {
     accountCreated: new Date(Date.now()),
     email: "ann@crazy.com",
-    password: "12345",
+    password: "1234567",
     first_name: "Ann",
     last_name: "Arbor",
     child_1_first_name: "Annabell",
@@ -21,15 +21,14 @@ const accountsSeed = [
     child_3_first_name: "Angelo",
     elf_1: "Joy",
     elf_2: "Noel",
-    start_festival: "12/01/2020",
-    end_festival: "12/25/2020",
+    start_festival: new Date("12/15/2020"),
     learn_about: "Facebook",
     account_active: true
   },
   {
     accountCreated: new Date(Date.now()),
     email: "bob@crazy.com",
-    password: "12345",
+    password: "1234567",
     first_name: "Bob",
     last_name: "Barker",
     child_1_first_name: "Bobby",
@@ -37,18 +36,16 @@ const accountsSeed = [
     child_3_first_name: "Buckwheat",
     elf_1: "Sprinkles",
     elf_2: "Winkles",
-    start_festival: "12/15/2020",
-    end_festival: "12/25/2020",
+    start_festival: new Date("12/15/2020"),
     learn_about: "Blog",
     account_active: true
   }
 ];
 
-db.family
-  // .remove({})
-  .then(() => db.family.collection.insertMany(accountsSeed))
+db.deleteMany({})
+  .then(() => db.insertMany(accountsSeed))
   .then(data => {
-    console.log(data.result.n + " records inserted!");
+    console.log(data.result + " records inserted!");
     process.exit(0);
   })
   .catch(err => {
