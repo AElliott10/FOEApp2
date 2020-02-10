@@ -8,7 +8,6 @@ import StyledNotes from '../Components/kidCalendar/magicalNotesStyles';
 import Modal from '@material-ui/core/Modal';
 import Fade from '@material-ui/core/Fade';
 import { makeStyles } from '@material-ui/core/styles';
-import {Grid} from '@material-ui/core';
 
 const GlobalStyle = createGlobalStyle`
 body {
@@ -19,15 +18,18 @@ const useStyles = makeStyles(theme => ({
 
   modal: {
     display: 'flex',
-    position: 'center',
     alignItems: 'center',
     justifyContent: 'center',
-    width: '200px',
+    width: '500px',
+    margin:'auto',
+    border:'none',
   },
+
   paper: {
-    backgroundColor: theme.palette.background.paper,
-    border: '2px solid #000',
-    boxShadow: theme.shadows[5],
+    backgroundColor: '#004940',
+    color:'#ffffff',
+    fontFamily: 'sans-serif',
+    //boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 4, 3),
   },
 }));
@@ -58,8 +60,6 @@ function MagicalNotes() {
     return (
     <>
       <MainHeader />
-      <Grid container>
-      <Grid item sm>
       <GlobalStyle />
       <StyledNotes>
         {notes.map(note =>
@@ -73,18 +73,29 @@ function MagicalNotes() {
         )}
       </StyledNotes>
       <Modal
+        className={classes.modal}
         open={selectedNote.open}
         onClose={!selectedNote.open}
         onClick={handleFlipNote}
         >
+          
         <Fade in={selectedNote.open}>
           <div className={classes.paper}>
-            <h2 id="transition-modal-title">{selectedNote.text}</h2>
+
+            <h2 id="personalized-greeting">
+              Dear ,</h2>
+          
+            <h2 id="countdown">{selectedNote.countdown}</h2>
+            
+            <h2 id="note-body">{selectedNote.text}</h2>
+            
+            <h2 id="elf-closing">
+              Love, 
+            </h2>
           </div>
         </Fade>
       </Modal>
-      </Grid>
-      </Grid>
+
       <SimpleBottomNavigation />
     </>
 
@@ -93,3 +104,19 @@ function MagicalNotes() {
 
 
 export default MagicalNotes;
+
+/*
+<h1 id="personalized-greeting"> Dear </h1>
+          <h1 id="note-body"> 
+          Body
+          </h1>
+          <h1 id="elf-names"> Love, </h1>
+          */
+
+          /*<h2 id="personalized-greeting">
+              Dear {child_1_first_name } and {child_2_first_name} and {child_3_first_name},</h2>
+              
+              <h2 id="elf-closing">
+              Love, {elf_1 } and {elf_2}
+            </h2>
+              */

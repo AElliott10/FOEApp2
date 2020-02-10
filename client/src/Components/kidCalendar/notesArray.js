@@ -6,7 +6,8 @@ export const messageArray = [
         num: 1,
         type: "starter",
         day: "start_festival", //note-1 = start_festival date, regardless of the chosen start date note one displays, the next day the note sequence matches the number. i.e. if the festival starts on Dec 15, then the note-1 displays overriding the Dec 15 note. Dec 16 the note will be note-16. 
-        text: "24 Days before Christmas!!!When Santa told us we would be your elves for festival of the elves we were soooo EXCITED!!! We left you dolls that look like us, so first thing is to give us a hug.Festival of the Elves is a magical time. Each day you will find a special note left behind. To get into the spirit we have three wishes to make:1.Please make us a Christmas drawing for our workshop.2.Spin around 3 times.3.Give someone you love a hug.",
+        countdown: "24 days before Christmas!!!", //need a math equation to calculate based on the days between the start date and Dec 25.
+        text: "When Santa told us we would be your elves for festival of the elves we were soooo EXCITED!!! We left you dolls that look like us, so first thing is to give us a hug.Festival of the Elves is a magical time. Each day you will find a special note left behind. To get into the spirit we have three wishes to make:1.Please make us a Christmas drawing for our workshop.2.Spin around 3 times.3.Give someone you love a hug.",
         open: false
     },
     
@@ -14,6 +15,7 @@ export const messageArray = [
         num: 2,
         type: "riddley_day",
         day: "02", 
+        countdown: "23 days before Christmas!!!",
         text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt.",
         open: false
     },
@@ -21,6 +23,7 @@ export const messageArray = [
         num: 3,
         type: "riddley_day",
         day: "03", 
+        countdown: "22 days before Christmas!!!",
         text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt.",
         open: false
     },
@@ -28,6 +31,7 @@ export const messageArray = [
         num: 4,
         type: "riddley_day",
         day: "04", 
+        countdown: "21 days before Christmas!!!",
         text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt.",
         open: false
     },
@@ -35,6 +39,7 @@ export const messageArray = [
         num: 5,
         type: "riddley_day",
         day: "05", 
+        countdown: "20 days before Christmas!!!",
         text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt.",
         open: false
     },
@@ -42,6 +47,7 @@ export const messageArray = [
         num: 6,
         type: "riddley_day",
         day: "06", 
+        countdown: "19 days before Christmas!!!",
         text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt.",
         open: false
     },
@@ -49,6 +55,7 @@ export const messageArray = [
         num: 7,
         type: "riddley_day",
         day: "07", 
+        countdown: "18 days before Christmas!!!",
         text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt.",
         open: false
     },
@@ -56,6 +63,7 @@ export const messageArray = [
         num: 8,
         type: "riddley_day",
         day: "08", 
+        countdown: "17 days before Christmas!!!",
         text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt.",
         open: false
     },
@@ -63,6 +71,7 @@ export const messageArray = [
         num: 9,
         type: "riddley_day",
         day: "09", 
+        countdown: "16 days before Christmas!!!",
         text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt.",
         open: false
     },
@@ -70,6 +79,7 @@ export const messageArray = [
         num: 10,
         type: "riddley_day",
         day: "10", 
+        countdown: "15 days before Christmas!!!",
         text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt.",
         open: false
     },
@@ -77,6 +87,7 @@ export const messageArray = [
         num: 11,
         type: "riddley_day",
         day: "11", 
+        countdown: "14 days before Christmas!!!",
         text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt.",
         open: false
     },
@@ -84,6 +95,7 @@ export const messageArray = [
         num: 12,
         type: "riddley_day",
         day: "12", 
+        countdown: "13 days before Christmas!!!",
         text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt.",
         open: false
     },
@@ -91,6 +103,7 @@ export const messageArray = [
         num: 13,
         type: "riddley_day",
         day: "13", 
+        countdown: "12 days before Christmas!!!",
         text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt.",
         open: false
     },
@@ -98,6 +111,7 @@ export const messageArray = [
         num: 14,
         type: "riddley_day",
         day: "14", 
+        countdown: "11 days before Christmas!!!",
         text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt.",
         open: false
     },
@@ -105,6 +119,7 @@ export const messageArray = [
         num: 15,
         type: "riddley_day",
         day: "15", 
+        countdown: "10 days before Christmas!!!",
         text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt.",
         open: false
     },
@@ -112,6 +127,7 @@ export const messageArray = [
         num: 16,
         type: "riddley_day",
         day: "16", 
+        countdown: "9 days before Christmas!!!",
         text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt.",
         open: false
     },
@@ -119,6 +135,7 @@ export const messageArray = [
         num: 17,
         type: "riddley_day",
         day: "17", 
+        countdown: "8 days before Christmas!!!",
         text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt.",
         open: false
     },
@@ -126,6 +143,7 @@ export const messageArray = [
     num: 18,
     type: "riddley_day",
     day: "18", 
+    countdown: "7 days before Christmas!!!",
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt.",
     open: false
 },
@@ -133,6 +151,7 @@ export const messageArray = [
 num: 19,
 type: "riddley_day",
 day: "19", 
+countdown: "6 days before Christmas!!!",
 text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt.",
 open: false
 },
@@ -140,13 +159,15 @@ open: false
 num: 20,
 type: "riddley_day",
 day: "20", 
+countdown: "5 days before Christmas!!!",
 text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt.",
 open: false
 },
 {   id: "note-21",
 num: 21,
 type: "riddley_day",
-day: "21", 
+day: "21",
+countdown: "4 days before Christmas!!!", 
 text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt.",
 open: false
 },
@@ -154,6 +175,7 @@ open: false
 num: 22,
 type: "riddley_day",
 day: "22", 
+countdown: "3 days before Christmas!!!",
 text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt.",
 open: false
 },
@@ -161,6 +183,7 @@ open: false
 num: 23,
 type: "riddley_day",
 day: "23", 
+countdown: "2 days before Christmas!!!",
 text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt.",
 open: false
 },
@@ -168,6 +191,7 @@ open: false
 num: 24,
 type: "riddley_day",
 day: "24", 
+countdown: "1 day before Christmas!!!",
 text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt.",
 open: false
 },

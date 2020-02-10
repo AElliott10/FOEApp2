@@ -22,7 +22,8 @@ const useStyles = makeStyles({
     left: '0',
     anchorpadding: '12px',
     indicatorColor: "#b71c1c",
-    textColor:"secondary#004940"
+    textColor:"secondary#004940",
+    
   },
 
 });
@@ -45,13 +46,7 @@ export function SimpleBottomNavigation() {
         //textColor="secondary"
         aria-label="icon label tabs example"
         centered
-        position="fixed"
-        width= "100%"
-        bottom= "0"
-        top= "auto"
-        
-        
-
+    
       >
         <Link to='/' className={classes.link}>
           <Tab icon={<HouseIcon />} label="HOME" /> 

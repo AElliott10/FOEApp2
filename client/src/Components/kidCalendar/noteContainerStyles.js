@@ -1,12 +1,17 @@
 import styled from 'styled-components';
 
+//This is where you can change the color of the boxes. Also affect how the box displays.
+
+//No impact on the modal here.
+
+
 export const ContainerStyled = styled.div`
 padding-top: 100%;
 position: relative;
 cursor: pointer;
 
 .front {
-    background: #004940;
+    background: #b71c1c;
     position: absolute;
     top: 0;
     left: 0;
@@ -30,25 +35,6 @@ cursor: pointer;
     }
 }
 
-.back {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    z-index: 1;
-    transform: rotateY(180deg);
-
-    &.open{
-        z-index: 2;
-        transform: rotateY(0deg);
-    }
-
-    p{
-        color: #fff;
-        padding: 10px;
-        font-size: 1.4 rem;
-        text-align: center;
-    }
-}
 
 >div {
     display: flex;
@@ -65,3 +51,26 @@ cursor: pointer;
 
 `
 export default ContainerStyled;
+/*
+.back {
+    
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+    transform: rotateY(180deg);
+
+    &.open{
+        
+        z-index: 2;
+        transform: rotateY(0deg);
+    }
+
+    p{
+        color: #fff;
+        padding: 10px;
+        font-size: 1.4 rem;
+        text-align: center;
+    }
+}
+*/

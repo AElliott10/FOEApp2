@@ -5,7 +5,7 @@ import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import Button from '@material-ui/core/Button';
-import { Redirect } from 'react-router-dom';
+//import { Redirect } from 'react-router-dom';
 
 
 
@@ -53,7 +53,8 @@ class AccountForm extends Component {
   handleFormSubmit = event => {
     event.preventDefault();
     //if all the required fields are complete
-    if (this.state.email && this.state.password && this.state.first_name && this.state.last_name && this.state.child_1_first_name && this.state.elf_1 && this.state.elf_2 && this.state.start_festival && this.state.learn_about) {
+    if (this.state.email && this.state.password && this.state.first_name && this.state.last_name && this.state.child_1_first_name && this.state.elf_1 && this.state.elf_2 && this.state.start_festival && this.state.learn_about) 
+    {
       API.saveAccounts({
         email: this.state.email,
         password: this.state.password,
@@ -67,8 +68,13 @@ class AccountForm extends Component {
         start_festival: new Date(this.state.start_festival),
         learn_about: this.state.learn_about
       })
-        .catch(err => console.log(err.response));
+      .catch((err) => {
+				if (err) {
+					console.log('Please fill out all user fields');
+				}
+			});
     }
+       // if (accountSaved).then (Redirect=('/login'));
   };
 
   
@@ -230,7 +236,6 @@ class AccountForm extends Component {
               fullWidth
               variant="contained"
               color="#004940"
-              Redirect to={'/login'}
             >Log In</Button>
 
           </form>

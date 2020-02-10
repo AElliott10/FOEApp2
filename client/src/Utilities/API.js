@@ -2,19 +2,33 @@ import axios from "axios";
 
 export default {
   // Establishing your end points
-  //Saves a book to the database
+
+  //Registers Account in the database
   saveAccounts: function (accountsData) {
     return axios.post("/api/account", accountsData);
   },
 
-  verifyAccess: function (accountsData) {
-    return axios.get("/api/account", accountsData);
+  //LogIn
+  LoginValidation: function (accountsData) {
+    return axios.post("/api/account", accountsData);
   },
+// Gets all data from family profile
+getFamilyProfile: function (id) {
+  return axios.get("/api/account/" + id);
+}
 
-  // Gets family profile
-  getFamilyProfile: function (id) {
-    return axios.get("/api/account/" + id);
-  }
+  /*LogOut
+  userLogout: function(obj) {
+    localStorage.removeItem('jwtToken');
+    localStorage.removeItem('eco-user');
+  },*/
+
+  /*userToken: function() {
+    return (axios.defaults.headers.common[
+      'Authorization'
+    ] = localStorage.getItem('jwtToken'));
+  },*/
+
 };
 
 
