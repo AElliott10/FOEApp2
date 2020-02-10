@@ -7,10 +7,17 @@ export default {
     return axios.post("/api/account", accountsData);
   },
 
-verifyAccess: function(accountsData) {
-  return axios.get("/api/account", accountsData);
-}
+  verifyAccess: function (accountsData) {
+    return axios.get("/api/account", accountsData);
+  },
+
+  // Gets family profile
+  getFamilyProfile: function (id) {
+    return axios.get("/api/account/" + id);
+  }
 };
+
+
 
 /* Possible code to leverage
 export default {

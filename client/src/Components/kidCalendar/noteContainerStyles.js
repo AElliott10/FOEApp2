@@ -1,6 +1,4 @@
 import styled from 'styled-components';
-/*import noteContainerBackdrop from './img/retina_wood.png';
-background: center / cover url(${noteContainerBackdrop});*/
 
 export const ContainerStyled = styled.div`
 padding-top: 100%;
@@ -8,7 +6,7 @@ position: relative;
 cursor: pointer;
 
 .front {
-    background: red;
+    background: #004940;
     position: absolute;
     top: 0;
     left: 0;
@@ -34,7 +32,6 @@ cursor: pointer;
 
 .back {
     position: absolute;
-    background-color: brown;
     top: 0px;
     left: 0px;
     z-index: 1;

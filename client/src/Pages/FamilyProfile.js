@@ -1,38 +1,23 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import { MainHeader } from "../Components/Header_Footer/MainHeader";
 import API from "../Utilities/API";
 import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
-//import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Button from '@material-ui/core/Button';
 
-/*const useStyles = makeStyles(theme => ({
-  form: {
-    width: '100%', // Fix IE 11 issue.
-    marginTop: theme.spacing(1),
-  },
-  submit: {
-    margin: theme.spacing(3, 0, 2),
-  },
-}));*/
-
 class FamilyProfile extends Component {
-  
 
   state = {
-    email: "",
-    password: "",
-    first_name: "",
-    last_name: "",
-    child_1_first_name: "",
-    child_2_first_name: "",
-    child_3_first_name: "",
-    elf_1: "",
-    elf_2: "",
-    start_festival: "",
-    learn_about: ""
+    account: {}
   };
+  componentDidMount() {
+    API.getFamilyProfile(this.props.match.params.id)
+      .then(res => this.setState({ account: res.data }))
+      .catch(err => console.log(err));
+  };
+
   handleInputChange = event => {
     const { name, value } = event.target;
     this.setState({
@@ -64,9 +49,10 @@ class FamilyProfile extends Component {
   render() {
 
     return (
-      <Container>
+     
         <div className="AccountForm">
           <MainHeader />
+          <Container>
           <Typography component="h1" variant="h5">Please complete the form.</Typography>
           <form>
             <TextField
@@ -201,7 +187,9 @@ class FamilyProfile extends Component {
             
             <TextField
               value={this.state.learn_about}
-              onChange={this.handleInputChange} variant="outlined"
+              onChange={this.handleInputChange} 
+              color="#004940"
+              variant="outlined"
               margin="normal"
               required
               fullWidth
@@ -216,15 +204,16 @@ class FamilyProfile extends Component {
               onClick={this.handleFormSubmit}
               fullWidth
               variant="contained"
-              color="primary"
+              color="#004940"
             >Log In</Button>
 
           </form>
-
+          </Container>
         </div>
-      </Container>
+      
     );
   }
 }
-
-export default FamilyProfile;
+    export default FamilyProfile;
+    
+//<img src={logo} className="App-logo" alt="logo" />

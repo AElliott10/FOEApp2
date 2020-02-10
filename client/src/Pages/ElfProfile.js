@@ -5,6 +5,7 @@ import { Typography } from "@material-ui/core";
 import Grid from '@material-ui/core/Grid';
 
 
+
 class ElfProfile extends Component {
   render() {
     return (
@@ -20,7 +21,7 @@ class ElfProfile extends Component {
             </Grid>
           </Grid>
         </div>
-        <SimpleBottomNavigation />
+        <SimpleBottomNavigation position='fixed' color="004940" className={{top:"auto", bottom: 0}}/>
       </div>
     );
   }

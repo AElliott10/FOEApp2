@@ -3,9 +3,11 @@ import { MainHeader } from "../Components/Header_Footer/MainHeader";
 import API from "../Utilities/API";
 import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
-//import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Button from '@material-ui/core/Button';
+import { Redirect } from 'react-router-dom';
+
+
 
 /*const useStyles = makeStyles(theme => ({
   form: {
@@ -17,8 +19,9 @@ import Button from '@material-ui/core/Button';
   },
 }));*/
 
+
 class AccountForm extends Component {
-  
+
 
   state = {
     email: "",
@@ -39,6 +42,13 @@ class AccountForm extends Component {
       [name]: value
     });
   };
+
+  /*redirectFrom = event => {
+    const { FormSubmited } = this.props;
+    if (handleFormSubmit) {
+      return <Redirect to={'/login'} />;
+    };*/
+
 
   handleFormSubmit = event => {
     event.preventDefault();
@@ -61,12 +71,13 @@ class AccountForm extends Component {
     }
   };
 
+  
   render() {
-
     return (
-      <Container>
-        <div className="AccountForm">
-          <MainHeader />
+
+      <div className="AccountForm">
+        <MainHeader />
+        <Container>
           <Typography component="h1" variant="h5">Please complete the form.</Typography>
           <form>
             <TextField
@@ -198,10 +209,12 @@ class AccountForm extends Component {
               autoComplete="start_festival"
               autoFocus
             />
-            
+
             <TextField
               value={this.state.learn_about}
-              onChange={this.handleInputChange} variant="outlined"
+              onChange={this.handleInputChange}
+              color="#004940"
+              variant="outlined"
               margin="normal"
               required
               fullWidth
@@ -216,17 +229,22 @@ class AccountForm extends Component {
               onClick={this.handleFormSubmit}
               fullWidth
               variant="contained"
-              color="primary"
+              color="#004940"
+              Redirect to={'/login'}
             >Log In</Button>
 
           </form>
-
-        </div>
-      </Container>
+        </Container>
+      </div>
     );
+    
   }
 }
-
+/*Redirect = event => {
+  const { FormSubmited } = this.props;
+  if (FormSubmited) {
+    return <Redirect to={'/login'} />;
+  }
+}
+Redirect();*/
 export default AccountForm;
-
-//<img src={logo} className="App-logo" alt="logo" />

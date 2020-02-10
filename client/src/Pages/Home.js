@@ -13,14 +13,25 @@ class Home extends Component {
         <div >
           <Grid container >
             <Grid item lg>
-              <Typography align="center">
-                <h1>Welcome to The Festival of Elves!</h1>
-                <body1>We are so excited to share with you a old tradition by elves for many centuries....</body1>
+              <Typography align="center" >
+                <h1 color= "#004940">Welcome to The Festival of Elves!</h1>
+                <h1>
+                  We are so excited to share with you a old tradition by elves for many centuries....
+<br/>
+                  We are so excited to share with you a old tradition by elves for many centuries....
+                  <br/>
+                  We are so excited to share with you a old tradition by elves for many centuries....
+
+
+
+                </h1>
               </Typography>
             </Grid>
           </Grid>
         </div>
-        <SimpleBottomNavigation />
+      
+        <SimpleBottomNavigation position='fixed' color="004940" className={{top:"auto", bottom: 0}}/>
+    
       </div>
     );
   }
