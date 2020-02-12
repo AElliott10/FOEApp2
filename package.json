@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "FOE app",
   "main": "server.js",
+  "proxy": "http://0.0.0.0:3001",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "start:prod": "node server.js",
@@ -17,16 +18,21 @@
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^4.1.0",
-    "nodemon": "^1.18.7"
+    "nodemon": "^1.19.4"
   },
   "dependencies": {
     "@material-ui/core": "^4.9.0",
     "Validator": "^1.0.8",
     "axios": "^0.19.2",
+    "bcrypt": "^3.0.8",
+    "bluebird": "^3.7.2",
     "bootstrap": "^3.4.1",
     "classnames": "^2.2.6",
+    "dotenv": "^8.2.0",
     "express": "^4.16.3",
+    "express-favicon": "^2.0.1",
     "if-env": "^1.0.4",
+    "jsonwebtoken": "^8.5.1",
     "lodash.isempty": "^4.4.0",
     "mongoose": "^5.8.9",
     "passport": "^0.4.1",

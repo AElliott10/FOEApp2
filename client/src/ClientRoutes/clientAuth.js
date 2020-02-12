@@ -14,7 +14,7 @@ export default {
   
   populateLocalStorage: function(accountsData) {
     localStorage.setItem('jwtToken', accountsData.token);
-    localStorage.setItem('eco-user', JSON.stringify(accountsData.user));
+    localStorage.setItem('fam-user', JSON.stringify(accountsData.user));
   },
 
   getLocalStorage: function(key) {

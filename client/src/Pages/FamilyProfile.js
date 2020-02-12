@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+/*import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { MainHeader } from "../Components/Header_Footer/MainHeader";
 import API from "../ClientRoutes/API";
@@ -9,7 +9,7 @@ import Button from '@material-ui/core/Button';
 
 class FamilyProfile extends Component {
 
-  state = {
+  state{
     account: {}
   };
   componentDidMount() {
@@ -217,3 +217,4 @@ class FamilyProfile extends Component {
     export default FamilyProfile;
     
 //<img src={logo} className="App-logo" alt="logo" />
+*/

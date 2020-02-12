@@ -9,15 +9,11 @@ const router = express.Router();
 const family = require('../models/accounts');
 const passController = require('../controller/passportController');
 
-//use email or user for controller.xxxUpdate???
-router.post('/update', passport.authenticate('jwt', { session: false }), controller.emailUpdate);
-// changed the way req.body is being parsed to data from post request can be accessed
-
 //Routing the LogIn on click
 router.post('/LogIn', function(req, res) {
 	family.findOne(
 		{
-			// updated username to userName to match model
+			// updated email to email to match model
 			email: req.body.email
 		},
 		function(err, user) {
