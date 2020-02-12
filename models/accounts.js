@@ -1,6 +1,6 @@
 //SECTION 1: Needed to create a Schema
 const mongoose = require('mongoose');
-
+const bcrypt = require('bcrypt');
 const accountsSchema = new mongoose.Schema({
 // `date` must be of type Date. The default value is the current date
   accountCreated: {
@@ -94,15 +94,27 @@ const accountsSchema = new mongoose.Schema({
 
 });
 
-module.exports = mongoose.model('family', accountsSchema);
 
 accountsSchema.methods.comparePassword = function(password, cb) {
-	bcrypt.compare(password, this.password, function(err, isMatch) {
-		if (err) {
-			return cb(err);
-		}
-		cb(null, isMatch);
-	});
+    console.log('password', password);
+    console.log('this.password', this.password);
+
+    if (password === this.password) {
+        return cb(null, true);
+    } else {
+        return cb(new Error('Wrong Password'))
+    }
+	// bcrypt.compare(password, this.password, function(err, isMatch) {
+	// 	if (err) {
+	// 		return cb(err);
+	// 	}
+	// 	cb(null, isMatch);
+	// });
 };
+
+
+module.exports = mongoose.model('family', accountsSchema);
+
+
 //SECTION 2: Needed to create the model & allow it to be exported
 //Need to point it to a collection

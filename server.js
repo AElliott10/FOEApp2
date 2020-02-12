@@ -19,7 +19,7 @@ if (process.env.NODE_ENV === "production") {
 }
 
 //connect to mongoose
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/27017/Foe_db';
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/Foe_db';
 
 mongoose.Promise = require('bluebird');
 mongoose.connect(MONGODB_URI, {

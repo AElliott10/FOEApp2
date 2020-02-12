@@ -9,27 +9,26 @@ export default {
     return axios.post("/api/account", accountsData);
   },
 
-  
-// Gets all data from family profile
-getFamilyProfile: function (id) {
-  return axios.get("/api/account/" + id);
-}
 
-  /*LogOut
+  // Gets all data from family profile
+  getFamilyProfile: function (id) {
+    return axios.get("/api/account/" + id);
+  },
+
+
+userToken: function() {
+    return (axios.defaults.headers.common[
+      'Authorization'
+    ] = localStorage.getItem('jwtToken'));
+  }
+
+};
+
+/*LogOut
   userLogout: function(obj) {
     localStorage.removeItem('jwtToken');
     localStorage.removeItem('eco-user');
   },*/
-
-  /*userToken: function() {
-    return (axios.defaults.headers.common[
-      'Authorization'
-    ] = localStorage.getItem('jwtToken'));
-  },*/
-
-};
-
-
 
 /* Possible code to leverage
 export default {

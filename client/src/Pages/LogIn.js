@@ -72,7 +72,8 @@ class LogIn extends React.Component{
     const { email, password } = this.state;
 
     clientAuth.userLogin({ email, password })
-      .then((result) => {
+      .then((result) =>
+      {
         clientAuth.populateLocalStorage(result.data);
         this.setState({ message: '' });
         window.location.replace('/');

@@ -1,17 +1,4 @@
 //NEED TO MATCH UP
-<h1>ELF PROFILE PAGE</h1>
-                <br/>
-                <h2>Andrew Tinker</h2>
-                <p> Loves video games and databases.
-                <br/>
-                <h2>Manoli Sprinkles</h2>
-                <p> Loves video games and React.
-                </p>
-                <br/>
-                <h2>Khalil Winkles</h2>
-                <p> Loves Harry Potter, video games and anything Paulgraham.
-                </p>
-
 
 const mongoose = require('mongoose');
 const db = require('../models/accounts');

@@ -6,17 +6,20 @@ require('../passport/passport')(passport);
 const express = require('express');
 const jwt = require('jsonwebtoken');
 const router = express.Router();
-const family = require('../models/accounts');
+const family = require('../models/accounts')
 const passController = require('../controller/passportController');
 
 //Routing the LogIn on click
-router.post('/LogIn', function(req, res) {
+router.post('/login', function(req, res){
+	console.log(req.body);
 	family.findOne(
 		{
 			// updated email to email to match model
 			email: req.body.email
 		},
 		function(err, user) {
+			// comming in as null
+			console.log(user);
 			if (err) throw err;
 			// if not a registered user...
 			if (!user) {
@@ -26,6 +29,8 @@ router.post('/LogIn', function(req, res) {
 				// check if password matches
 				// comparePassword method can be found in User model
 				user.comparePassword(req.body.password, function(err, isMatch) {
+					console.log("err", err);
+					console.log('isMatch', isMatch);
 					if (isMatch && !err) {
 						// if user is found and password is right create a token
 						const token = jwt.sign(user.toJSON(), settings.secret);
