@@ -15,7 +15,8 @@ cursor: pointer;
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 2;
+    z-index: 0;
+    margin-bottom: 100px;
 
     p{
         display: flex;

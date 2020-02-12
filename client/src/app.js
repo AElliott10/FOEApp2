@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./Pages/Home";
 import AccountForm from "./Pages/AccountForm";
 import MagicalNotes from "./Pages/MagicalNotes";
+//import LoginPage from "../Components/Authorization/authLogIn";
 import LogIn from "./Pages/LogIn";
 import ElfProfile from "./Pages/ElfProfile";
 import FamilyProfile from "C:/Users/Angeli/OneDrive/Documents/GitHub/01FOE_Mern/client/src/Pages/FamilyProfile";
@@ -27,3 +28,5 @@ function App() {
 }
 
 export default App;
+
+//<Route exact path="/LoginPage" component={LoginPage} />

@@ -10,7 +10,8 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-import API from "../Utilities/API";
+//import API from "../ClientRoutes/API";
+import clientAuth from '../ClientRoutes/clientAuth';
 
 function Copyright() {
   return (
@@ -45,97 +46,116 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export function LogIn() {
-  const classes = useStyles();
-  const { email, password } = this.state;
+class LogIn extends React.Component{
+  //const classes = useStyles();
+
+  //Create STATE HERE!!!!
+  constructor() {
+		super();
+    this.state = {
+      userName: '',
+      password: ''
+    };
+    this.onSubmit = this.onSubmit.bind(this);
+    this.onChange = this.onChange.bind(this);
+  };
+
+  onChange = (e) => {
+    const state = this.state;
+    state[e.target.name] = e.target.value;
+    this.setState(state);
+  };
+
+  onSubmit = (e) => {
+    e.preventDefault();
+
+    const { email, password } = this.state;
+
+    clientAuth.userLogin({ email, password })
+      .then((result) => {
+        clientAuth.populateLocalStorage(result.data);
+        this.setState({ message: '' });
+        window.location.replace('/');
+      })
+      .catch((error) => {
+        if (error.response.status === 401) {
+          this.setState({ message: 'Login failed. username or password does not match' });
+        }
+      });
+  };
   
-	const onChange = (e) => {
-		const state = this.state;
-		state[e.target.name] = e.target.value;
-		this.setState(state);
-	};
-
-	const onSubmit = (e) => {
-		e.preventDefault();
-
-		const { email, password } = this.state;
-
-		API.userLogin({ email, password })
-			.then((result) => {
-				API.populateLocalStorage(result.data);
-				this.setState({ message: '' });
-				window.location.replace('/');
-			})
-			.catch((error) => {
-				if (error.response.status === 401) {
-					this.setState({ message: 'Login failed. username or password does not match' });
-				}
-			});
-	};
-		
-  return (
-    <Container component="main" maxWidth="xs">
-      <CssBaseline />
-      <div className={classes.paper}>
-        <Avatar className={classes.avatar}>
-          <LockOutlinedIcon />
-        </Avatar>
-        <Typography component="h1" variant="h5">
-          Sign in
+  render() {
+//replaced all classes with useStyles
+    const { email, password } = this.state;
+    return (
+      <Container component="main" maxWidth="xs">
+        <CssBaseline />
+        <div className={useStyles.paper}>
+          <Avatar className={useStyles.avatar}>
+            <LockOutlinedIcon />
+          </Avatar>
+          <Typography component="h1" variant="h5">
+            Please sign in
         </Typography>
-        <form className="form-signin" onSubmit={this.onSubmit}>
-          <TextField
-            onChange={this.onChange}
-            variant="outlined"
-            margin="normal"
-            required
-            fullWidth
-            id="email"
-            label="Email Address"
-            name="email"
-            autoComplete="email"
-            autoFocus
-          />
-          <TextField
-            onChange={this.onChange}
-            variant="outlined"
-            margin="normal"
-            required
-            fullWidth
-            name="password"
-            label="Password"
-            type="password"
-            id="password"
-            autoComplete="current-password"
-          />
-          
-          <Button
-            type="submit"
-            fullWidth
-            variant="contained"
-            color="primary"
-            className={classes.submit}
-          >
-            Sign In
+          <form className="form-signin" onSubmit={this.onSubmit}>
+            <TextField
+              onChange={this.onChange}
+              id="outlined-password-input"
+              //id="email"
+              variant="outlined"
+              margin="normal"
+              fullWidth
+              label="Email Address"
+              name="email"
+              value={email}
+              autoComplete="current-email"
+              autoFocus
+              required
+
+            />
+            <TextField
+              id="outlined-password-input"
+              //id="password"
+              onChange={this.onChange}
+              variant="outlined"
+              margin="normal"
+              fullWidth
+              name="password"
+              label="Password"
+              type="password"
+              autoComplete="current-password"
+              required
+            />
+
+            <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              color="primary"
+              className={useStyles.submit}
+            >
+              Sign In
           </Button>
-          <Grid container>
-            <Grid item xs>
-              <Link href="#" variant="body2">
-                Forgot password?
+            <Grid container>
+              <Grid item xs>
+                <Link href="#" variant="body2">
+                  Forgot password?
               </Link>
+              </Grid>
+              <Grid item>
+                <Link href="/AccountForm" variant="body2">
+                  {"Don't have an account? Sign Up"}
+                </Link>
+              </Grid>
             </Grid>
-            <Grid item>
-              <Link href="/AccountForm" variant="body2">
-                {"Don't have an account? Sign Up"}
-              </Link>
-            </Grid>
-          </Grid>
-        </form>
-      </div>
-      <Box mt={8}>
-        <Copyright />
-      </Box>
-    </Container>
-  );
+          </form>
+        </div>
+        <Box mt={8}>
+          <Copyright />
+        </Box>
+      </Container>
+    );
+  }
 }
+
 export default LogIn;

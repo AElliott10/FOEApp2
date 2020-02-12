@@ -1,4 +1,5 @@
 import axios from "axios";
+//Routes to the database
 
 export default {
   // Establishing your end points
@@ -8,10 +9,7 @@ export default {
     return axios.post("/api/account", accountsData);
   },
 
-  //LogIn
-  LoginValidation: function (accountsData) {
-    return axios.post("/api/account", accountsData);
-  },
+  
 // Gets all data from family profile
 getFamilyProfile: function (id) {
   return axios.get("/api/account/" + id);

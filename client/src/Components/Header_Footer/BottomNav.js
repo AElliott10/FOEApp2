@@ -23,8 +23,14 @@ const useStyles = makeStyles({
     anchorpadding: '12px',
     indicatorColor: "#b71c1c",
     textColor:"secondary#004940",
+    zIndex: '1',
+    background: 'white',
     
   },
+link: {
+  color: '#004940',
+  textDecoration: 'none',
+}
 
 });
 

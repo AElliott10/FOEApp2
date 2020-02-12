@@ -94,6 +94,15 @@ const accountsSchema = new mongoose.Schema({
 
 });
 
+//
+accountsSchema.methods.comparePassword = function(password, cb) {
+	bcrypt.compare(password, this.password, function(err, isMatch) {
+		if (err) {
+			return cb(err);
+		}
+		cb(null, isMatch);
+	});
+};
 //SECTION 2: Needed to create the model & allow it to be exported
 //Need to point it to a collection
 module.exports = mongoose.model('family', accountsSchema);
