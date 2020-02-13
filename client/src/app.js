@@ -7,7 +7,7 @@ import MagicalNotes from "./Pages/MagicalNotes";
 //import LoginPage from "../Components/Authorization/authLogIn";
 import LogIn from "./Pages/LogIn";
 import ElfProfile from "./Pages/ElfProfile";
-import FamilyProfile from "C:/Users/Angeli/OneDrive/Documents/GitHub/01FOE_Mern/client/src/Pages/FamilyProfile";
+import FamilyProfile from "./Pages/FamilyProfile";
 //import Nav from "./components/Nav";
 
 function App() {
