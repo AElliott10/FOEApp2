@@ -9,6 +9,7 @@ const app = express();
 var auth = require('./routes/passportAuth');
 const connection = mongoose.connection;
 const routes = require("./routes");
+console.log('PORT', PORT);
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
