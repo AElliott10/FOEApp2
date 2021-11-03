@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "@material-ui/core": "^4.9.0",
-    "Validator": "^1.0.8",
+    "Validator": "^1.1.4",
     "axios": "^0.19.2",
     "bcrypt": "^3.0.8",
     "bluebird": "^3.7.2",
